@@ -2,8 +2,13 @@
 # -*- encoding: utf8 -*-
 # vim: ts=4
 
-#import pygtk
-#pygtk.require('2.0')
+# Conference Chronometer está disponible bajo la Licencia Creative Commons
+# "Atribución-No Comercial-Licenciar Igual 2.0 Chile". Puede encontrar una
+# copia en http://creativecommons.org/licenses/by-nc-sa/2.0/cl/
+# Autor: Renato M. Covarrubias Romero
+# Email: rnt [at] rnt.cl
+# URL  : http://rnt.cl/software/conference-chronometer/
+
 import gtk
 import gtk.gdk
 import gobject
