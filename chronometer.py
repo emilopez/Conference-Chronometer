@@ -8,6 +8,8 @@
 # Autor: Renato M. Covarrubias Romero
 # Email: rnt [at] rnt.cl
 # URL  : http://rnt.cl/software/conference-chronometer/
+# Modificado por: Emiliano P. Lopez
+# Email: emiliano.lopez [at] gmail.com
 
 import gtk
 import gtk.gdk
@@ -19,7 +21,7 @@ import pango
 class Cronometro:
 	'''
 	  Esta clase maneja el cronómetro.
-	  
+
 	  Cronómero de máximo 99 minutos con 59 segundos.
 	'''
 
@@ -47,10 +49,12 @@ class Cronometro:
 
 		# Resta un 10% del tiempo, la barra a color rojo.
 		# Resta un 50% del tiempo, la barra a color amarillo.
-		if rel>0.9:
+		if rel>self.rojo:
 			self.pbar.modify_bg(gtk.STATE_SELECTED, gtk.gdk.color_parse("red") )
 		elif rel>0.5:
 			self.pbar.modify_bg(gtk.STATE_SELECTED, gtk.gdk.color_parse("yellow") )
+		else:
+		    self.pbar.modify_bg(gtk.STATE_SELECTED, gtk.gdk.color_parse("green") )
 		return True
 
 
@@ -70,6 +74,15 @@ class Cronometro:
 		"""
 
 		# Definiendo la entrada, como los minutos a contar.
+		# Si el parametro es 50, al 80% del tiempo pasar a rojo (40 min)
+		# Si el parametro es 20, al 75% del tiempo pasar a rojo (15 min)
+		# Si no es ninguno de los anteriores al 90% del tiempo pasa a rojo
+		if int(sys.argv[1])==50:
+			self.rojo=0.80
+		elif int(sys.argv[1])==20:
+			self.rojo=0.75
+		else:
+			self.rojo=0.9
 		self.maxtiempo = int(sys.argv[1])*60
 		self.tiempo = 0
 		self.formato="%s:%s"
@@ -102,8 +115,7 @@ class Cronometro:
 		align.add(self.pbar)
 		self.pbar.show()
 
-		# Agregamos el callback para el timer que actualizará la barra de
-		# progreso.
+		# Agregamos el callback para el timer que actualizará la barra de progreso.
 		self.timer = gobject.timeout_add (1000, self.progress_timeout)
 
 		# Agregamos el botón para salir del cronómetro
@@ -151,4 +163,6 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
+    # Charlas simples:      15 min + 5 de preguntas (20)
+    # Charlas magistrales:  40 min + 10 de preguntas (50)
+    main()
