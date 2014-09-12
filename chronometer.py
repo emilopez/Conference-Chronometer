@@ -143,14 +143,14 @@ def main():
         Realiza la validación de la entrada
     '''
 
-    if len(sys.argv) = 4 and isNumeric(sys.argv[1]) and isNumeric(sys.argv[2]) and isNumeric(sys.argv[3]):
+    if len(sys.argv) == 4 and isNumeric(sys.argv[1]) and isNumeric(sys.argv[2]) and isNumeric(sys.argv[3]):
         Cronometro()
         gtk.main()
         return 0
     else:
-        print "Use: %s <minutos>" % sys.argv[0]
-        print "\nPara un cronómetro de 5 minutos:"
-        print "\t%s 5" % sys.argv[0]
+        print "Use: %s <minutos_verde> <minutos_amarillo> <minutos_rojo>" % sys.argv[0]
+        print "\nPara un cronómetro de 5 minutos: 2 verde, 2 amarillo y 1 rojo:"
+        print "\t%s 2 2 1" % sys.argv[0]
         return 1
 
 
