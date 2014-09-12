@@ -1,12 +1,20 @@
 from PyQt4 import QtGui, QtCore
 import os
 import nico
+import json
 
 class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
     def __init__(self,parent = None):
         QtGui.QMainWindow.__init__(self,parent)
         self.ventana = nico.Ui_MainWindow()
         self.ventana.setupUi(self)
+
+        # Load saved chronos
+        chronos_fn = 'chronos.json'
+        with open(chronos_fn) as json_data:
+            chronos = json.load(json_data)
+        for t in chronos.keys():
+            self.ventana.SavedList.addItem(t+':'+str(chronos[t][0])+','+str(chronos[t][1])+','+str(chronos[t][2]))
 
         # GUI events
         self.ventana.CloseBtn.clicked.connect(QtCore.QCoreApplication.instance().quit)
