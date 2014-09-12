@@ -30,7 +30,7 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         red_time = self.ventana.RedEdit.text()
         chron_label = self.ventana.LabelEdit.text()
         self.ventana.SavedList.addItem(chron_label+':'+green_time+','+yellow_time+','+red_time)
-        self.chronos[chron_label]=[green_time,yellow_time,red_time]
+        self.chronos[str(chron_label)]=[int(green_time),int(yellow_time),int(red_time)]
 
         # Save json files with chronos
         with open(self.chronos_fn, 'wb') as json_data:
