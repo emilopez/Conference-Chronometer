@@ -10,11 +10,12 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         self.ventana.setupUi(self)
 
         # Load saved chronos
-        chronos_fn = 'chronos.json'
-        with open(chronos_fn) as json_data:
-            chronos = json.load(json_data)
-        for t in chronos.keys():
-            self.ventana.SavedList.addItem(t+':'+str(chronos[t][0])+','+str(chronos[t][1])+','+str(chronos[t][2]))
+        self.chronos_fn = 'chronos.json'
+        with open(self.chronos_fn) as json_data:
+            self.chronos = json.load(json_data)
+        for t in self.chronos.keys():
+            self.ventana.SavedList.addItem(t+':'+str(self.chronos[t][0])+
+            ','+str(self.chronos[t][1])+','+str(self.chronos[t][2]))
 
         # GUI events
         self.ventana.CloseBtn.clicked.connect(QtCore.QCoreApplication.instance().quit)
@@ -29,6 +30,12 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         red_time = self.ventana.RedEdit.text()
         chron_label = self.ventana.LabelEdit.text()
         self.ventana.SavedList.addItem(chron_label+':'+green_time+','+yellow_time+','+red_time)
+        self.chronos[chron_label]=[green_time,yellow_time,red_time]
+
+        # Save json files with chronos
+        with open(self.chronos_fn, 'wb') as json_data:
+            json.dump(self.chronos, json_data)
+
 
     def LaunchChrono(self):
         os.system("./chronometer.py 1 1 1")
