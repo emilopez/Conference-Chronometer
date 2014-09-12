@@ -131,7 +131,6 @@ class Cronometro:
 
 def isNumeric(s):
     "Retorna True si el dato ingresado es numérico."
-
     try:
         int(s)
         return True
@@ -144,7 +143,7 @@ def main():
         Realiza la validación de la entrada
     '''
 
-    if len(sys.argv) > 1 and isNumeric(sys.argv[1]):
+    if len(sys.argv) = 4 and isNumeric(sys.argv[1]) and isNumeric(sys.argv[2]) and isNumeric(sys.argv[3]):
         Cronometro()
         gtk.main()
         return 0
