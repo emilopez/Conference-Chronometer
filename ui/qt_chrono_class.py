@@ -1,6 +1,6 @@
 from PyQt4 import QtGui, QtCore
 import os
-from ui import nico
+import nico
 
 class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
     def __init__(self,parent = None):
