@@ -5,7 +5,6 @@ import nico
 class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
     def __init__(self,parent = None):
         QtGui.QMainWindow.__init__(self,parent)
-        # crea ventana principal
         self.ventana = nico.Ui_MainWindow()
         self.ventana.setupUi(self)
 
@@ -22,7 +21,6 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         red_time = self.ventana.RedEdit.text()
         chron_label = self.ventana.LabelEdit.text()
         self.ventana.SavedList.addItem(chron_label+':'+green_time+','+yellow_time+','+red_time)
-
 
     def LaunchChrono(self):
         os.system("./chronometer.py 1")
