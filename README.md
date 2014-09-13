@@ -19,5 +19,7 @@ Con la ejecución previa el tiempo total sería de 6 minutos.
 Desde la interfaz gráfica
 -------------------------
 
+Ejecute qt_chronometer.py y luego:
+
 * Cargue el cronómetro en la lista ingresando el tiempo por cada color y presionado Save
 * Ejecute el cronómetro haciendo doble click sobre un item de la lista o seleccionándolo y presionando Launch Timer
