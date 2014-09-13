@@ -1,9 +1,13 @@
 Conference-Chronometer
 ======================
 
-Chronometer to use in Conference
+Proyecto derivado de https://github.com/rnt/Conference-Chronometer que agrega funcionalidades e interfaz gráfica.
 
-Forked from https://github.com/rnt/Conference-Chronometer
+Descripción
+-----------
+
+Cronómetro para conferencias que muestra el tiempo de transcurre y cambia el color de fondo entre verde, amarillo y rojo según la configuración del usuario. Para una charla es de 15 minutos uno puede configurar el cronómetro para que muestre un determinado tiempo cada color (5,5,5 o 1,9,5, etc, etc, etc).
+
 
 Existen dos maneras de ejecutar el cronómetro:
 
