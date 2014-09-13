@@ -29,6 +29,7 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         yellow_time = self.ventana.YellowEdit.text()
         red_time = self.ventana.RedEdit.text()
         chron_label = self.ventana.LabelEdit.text()
+        ok = False
         try:
             int(green_time)
             int(yellow_time)
@@ -36,7 +37,7 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
             ok = True
         except Exception:
             QtGui.QMessageBox.about(self, 'Error','Input can only be a number')
-            ok = False
+
         if ok and chron_label not in list(self.chronos.keys()):
             self.ventana.SavedList.addItem(chron_label+':'+green_time+','+yellow_time+','+red_time)
             self.chronos[str(chron_label)]=[int(green_time),int(yellow_time),int(red_time)]
@@ -47,4 +48,12 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
 
 
     def LaunchChrono(self):
-        os.system("./chronometer.py 1 1 1")
+        ok = False
+        try:
+            chron_label, color_times = self.ventana.SavedList.currentItem().text().split(':')
+            g,y,r = color_times.split(',')
+            ok = True
+        except Exception:
+            QtGui.QMessageBox.about(self, 'Error','Choose an item')
+        if ok:
+            os.system("./chronometer.py "+str(g)+' '+str(y)+' '+str(r))
