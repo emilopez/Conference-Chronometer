@@ -30,3 +30,11 @@ Ejecute qt_chronometer.py y luego:
 
 * Cargue el cronómetro en la lista ingresando el tiempo por cada color y presionado Save
 * Ejecute el cronómetro haciendo doble click sobre un item de la lista o seleccionándolo y presionando Launch Timer
+
+
+To do
+-----
+
+* Agregar menú con ayuda y acerca de  
+* Título a lista de cronómetros
+* Empaquetar
