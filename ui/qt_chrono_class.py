@@ -29,12 +29,21 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         yellow_time = self.ventana.YellowEdit.text()
         red_time = self.ventana.RedEdit.text()
         chron_label = self.ventana.LabelEdit.text()
-        self.ventana.SavedList.addItem(chron_label+':'+green_time+','+yellow_time+','+red_time)
-        self.chronos[str(chron_label)]=[int(green_time),int(yellow_time),int(red_time)]
+        try:
+            int(green_time)
+            int(yellow_time)
+            int(red_time)
+            ok = True
+        except Exception:
+            QtGui.QMessageBox.about(self, 'Error','Input can only be a number')
+            ok = False
+        if ok and chron_label not in list(self.chronos.keys()):
+            self.ventana.SavedList.addItem(chron_label+':'+green_time+','+yellow_time+','+red_time)
+            self.chronos[str(chron_label)]=[int(green_time),int(yellow_time),int(red_time)]
 
-        # Save json files with chronos
-        with open(self.chronos_fn, 'wb') as json_data:
-            json.dump(self.chronos, json_data)
+            # Save json files with chronos
+            with open(self.chronos_fn, 'wb') as json_data:
+                json.dump(self.chronos, json_data)
 
 
     def LaunchChrono(self):
