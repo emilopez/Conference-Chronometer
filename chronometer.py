@@ -8,8 +8,15 @@
 # Autor: Renato M. Covarrubias Romero
 # Email: rnt [at] rnt.cl
 # URL  : http://rnt.cl/software/conference-chronometer/
+
 # Modificado por: Emiliano P. Lopez
+# Proyecto Forkeado en https://github.com/emilopez/Conference-Chronometer
 # Email: emiliano.lopez [at] gmail.com
+
+# ChangeLog
+# Se cambió el uso original
+# Ahora recibe 3 argumentos referidos a los minutos para cada color de fondo: verde, amarillo y rojo
+# En función de estos valores cambia el color
 
 import gtk
 import gtk.gdk
