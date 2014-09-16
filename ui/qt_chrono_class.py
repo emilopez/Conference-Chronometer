@@ -67,5 +67,10 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         Se invoca al presionar DEL sobre un item y
         elimina item seleccionado
         '''
+        chron_label, color_times = self.ventana.SavedList.currentItem().text().split(':')
+        del self.chronos[str(chron_label)]
         self.ventana.SavedList.takeItem(self.ventana.SavedList.currentRow())
+        # Save json files with chronos
+        with open(self.chronos_fn, 'wb') as json_data:
+            json.dump(self.chronos, json_data)
 
