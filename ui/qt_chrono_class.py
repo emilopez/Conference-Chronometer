@@ -1,3 +1,4 @@
+# -*- encoding: utf8 -*-
 from PyQt4 import QtGui, QtCore
 import os
 import nico
@@ -22,9 +23,11 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         self.ventana.LaunchBtn.clicked.connect(self.LaunchChrono)
         self.ventana.SaveBtn.clicked.connect(self.SaveChrono)
         self.ventana.SavedList.itemDoubleClicked.connect(self.LaunchChrono)
-
         #QtGui.QShortcut(QtGui.QKeySequence("F"), self.ventana.SavedList, self.LaunchChrono)
         QtGui.QShortcut(QtGui.QKeySequence(QtCore.Qt.Key_Delete), self.ventana.SavedList, self.DelChrono)
+
+        self.ventana.actionAbout.triggered.connect(self.ShowAbout)
+
 
 
     # Implementados
@@ -74,3 +77,12 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         with open(self.chronos_fn, 'wb') as json_data:
             json.dump(self.chronos, json_data)
 
+    def ShowAbout(self):
+        QtGui.QMessageBox.about(self, self.tr("About..."),
+        self.tr("Project: https://github.com/emilopez/Conference-Chronometer \n\n"
+                "GUI Author: Emiliano Lopez -  \n"
+                "Email: emiliano [dot] lopez [at] gmail\n"
+                "Version: 0.6 \n"
+                "Last update: Sept 2014\n"
+                "Original Project: http://rnt.cl/software/conference-chronometer/ \n"
+                "License: Atribución-No Comercial-Licenciar Igual 2.0 Chile"))
