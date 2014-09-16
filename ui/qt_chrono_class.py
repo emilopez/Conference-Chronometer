@@ -78,21 +78,21 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
             json.dump(self.chronos, json_data)
 
     def ShowAbout(self):
-        QtGui.QMessageBox.about(self, self.tr("About..."),
-        self.tr("Project: https://github.com/emilopez/Conference-Chronometer \n\n"
-                "GUI Author: Emiliano Lopez -  \n"
-                "Email: emiliano [dot] lopez [at] gmail\n"
-                "Version: 0.6 \n"
-                "Last update: Sept 2014\n"
-                "Original Project: http://rnt.cl/software/conference-chronometer/ \n"
-                "License: Atribución-No Comercial-Licenciar Igual 2.0 Chile"))
+        QtGui.QMessageBox.about(self, "About",
+                u"Project: https://github.com/emilopez/Conference-Chronometer \n\n"
+                u"GUI developer: Emiliano López  \n"
+                u"Email: emiliano [dot] lopez [at] gmail\n"
+                u"Version: 0.9 \n"
+                u"Last update: Sept 2014\n"
+                u"Original Project: http://rnt.cl/software/conference-chronometer/ \n"
+                u"License: Atribución-No Comercial-Licenciar Igual 2.0 Chile")
 
     def ShowHelp(self):
-        QtGui.QMessageBox.about(self, self.tr("About..."),
-        self.tr("- Se debe ingresar el tiempo de progreso que durará cada color \n"
-                "- La suma total de los tiempos es el tiempo total del cronómetro \n"
-                "- Con Save, se agrega a la lista de cronómetros y queda almacenada \n"
-                "- El reloj se lanza haciendo doble click sobre un cronómetro o bien \n"
-                "   seleccionándolo y presionando el botón Launch Timer \n"
-                "- Para eliminar una charla de la lista, se la selecciona y oprime DEL \n\n"
-                " Mas ayuda en https://github.com/emilopez/Conference-Chronometer"))
+        QtGui.QMessageBox.about(self, "Help",
+                u"- Se debe ingresar el tiempo de progreso que durará cada color \n"
+                u"- La suma total de los tiempos es el tiempo total del cronómetro \n"
+                u"- Con Save, se agrega a la lista de cronómetros y queda almacenada \n"
+                u"- El reloj se lanza haciendo doble click sobre un cronómetro o bien \n"
+                u"   seleccionándolo y presionando el botón Launch Timer \n"
+                u"- Para eliminar una charla de la lista, se la selecciona y oprime DEL \n\n"
+                u" Mas ayuda en https://github.com/emilopez/Conference-Chronometer")
