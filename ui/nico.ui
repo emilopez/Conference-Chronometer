@@ -195,8 +195,8 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="separator"/>
     <addaction name="actionHelp"/>
+    <addaction name="separator"/>
     <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuAbout"/>
