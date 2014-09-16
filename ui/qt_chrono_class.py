@@ -25,8 +25,8 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         self.ventana.SavedList.itemDoubleClicked.connect(self.LaunchChrono)
         #QtGui.QShortcut(QtGui.QKeySequence("F"), self.ventana.SavedList, self.LaunchChrono)
         QtGui.QShortcut(QtGui.QKeySequence(QtCore.Qt.Key_Delete), self.ventana.SavedList, self.DelChrono)
-
         self.ventana.actionAbout.triggered.connect(self.ShowAbout)
+        self.ventana.actionHelp.triggered.connect(self.ShowHelp)
 
 
 
@@ -86,3 +86,13 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
                 "Last update: Sept 2014\n"
                 "Original Project: http://rnt.cl/software/conference-chronometer/ \n"
                 "License: Atribución-No Comercial-Licenciar Igual 2.0 Chile"))
+
+    def ShowHelp(self):
+        QtGui.QMessageBox.about(self, self.tr("About..."),
+        self.tr("- Se debe ingresar el tiempo de progreso que durará cada color \n"
+                "- La suma total de los tiempos es el tiempo total del cronómetro \n"
+                "- Con Save, se agrega a la lista de cronómetros y queda almacenada \n"
+                "- El reloj se lanza haciendo doble click sobre un cronómetro o bien \n"
+                "   seleccionándolo y presionando el botón Launch Timer \n"
+                "- Para eliminar una charla de la lista, se la selecciona y oprime DEL \n\n"
+                " Mas ayuda en https://github.com/emilopez/Conference-Chronometer"))
