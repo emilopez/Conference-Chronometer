@@ -4,7 +4,7 @@
 # META
 #===============================================================================
 
-__version__ = "0.2.0"
+__version__ = "0.9.0"
 __license__ = "GPL v3"
 __author__ = "Emiliano López"
 __email__ = "emiliano dot lopez at gmail dot com"
