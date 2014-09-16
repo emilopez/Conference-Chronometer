@@ -213,6 +213,16 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>GreenEdit</tabstop>
+  <tabstop>YellowEdit</tabstop>
+  <tabstop>RedEdit</tabstop>
+  <tabstop>LabelEdit</tabstop>
+  <tabstop>SaveBtn</tabstop>
+  <tabstop>SavedList</tabstop>
+  <tabstop>LaunchBtn</tabstop>
+  <tabstop>CloseBtn</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

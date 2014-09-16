@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nico.ui'
 #
-# Created: Mon Sep 15 22:36:58 2014
+# Created: Tue Sep 16 01:40:30 2014
 #      by: PyQt4 UI code generator 4.11.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -85,13 +85,20 @@ class Ui_MainWindow(object):
         self.actionHelp.setObjectName(_fromUtf8("actionHelp"))
         self.actionAbout = QtGui.QAction(MainWindow)
         self.actionAbout.setObjectName(_fromUtf8("actionAbout"))
-        self.menuAbout.addSeparator()
         self.menuAbout.addAction(self.actionHelp)
+        self.menuAbout.addSeparator()
         self.menuAbout.addAction(self.actionAbout)
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.GreenEdit, self.YellowEdit)
+        MainWindow.setTabOrder(self.YellowEdit, self.RedEdit)
+        MainWindow.setTabOrder(self.RedEdit, self.LabelEdit)
+        MainWindow.setTabOrder(self.LabelEdit, self.SaveBtn)
+        MainWindow.setTabOrder(self.SaveBtn, self.SavedList)
+        MainWindow.setTabOrder(self.SavedList, self.LaunchBtn)
+        MainWindow.setTabOrder(self.LaunchBtn, self.CloseBtn)
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
