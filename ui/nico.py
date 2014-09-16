@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nico.ui'
 #
-# Created: Wed Sep 10 02:19:27 2014
+# Created: Mon Sep 15 22:36:58 2014
 #      by: PyQt4 UI code generator 4.11.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -68,14 +68,27 @@ class Ui_MainWindow(object):
         self.label_5 = QtGui.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(20, 7, 101, 16))
         self.label_5.setObjectName(_fromUtf8("label_5"))
+        self.label_6 = QtGui.QLabel(self.centralwidget)
+        self.label_6.setGeometry(QtCore.QRect(230, 7, 101, 16))
+        self.label_6.setObjectName(_fromUtf8("label_6"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 428, 19))
         self.menubar.setObjectName(_fromUtf8("menubar"))
+        self.menuAbout = QtGui.QMenu(self.menubar)
+        self.menuAbout.setObjectName(_fromUtf8("menuAbout"))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
         MainWindow.setStatusBar(self.statusbar)
+        self.actionHelp = QtGui.QAction(MainWindow)
+        self.actionHelp.setObjectName(_fromUtf8("actionHelp"))
+        self.actionAbout = QtGui.QAction(MainWindow)
+        self.actionAbout.setObjectName(_fromUtf8("actionAbout"))
+        self.menuAbout.addSeparator()
+        self.menuAbout.addAction(self.actionHelp)
+        self.menuAbout.addAction(self.actionAbout)
+        self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -90,4 +103,8 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Red", None))
         self.label_4.setText(_translate("MainWindow", "Label", None))
         self.label_5.setText(_translate("MainWindow", "Time Settings", None))
+        self.label_6.setText(_translate("MainWindow", "Saved Timers", None))
+        self.menuAbout.setTitle(_translate("MainWindow", "Help", None))
+        self.actionHelp.setText(_translate("MainWindow", "Help", None))
+        self.actionAbout.setText(_translate("MainWindow", "About", None))
 
