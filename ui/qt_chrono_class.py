@@ -9,7 +9,7 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         QtGui.QMainWindow.__init__(self,parent)
         self.ventana = nico.Ui_MainWindow()
         self.ventana.setupUi(self)
-
+        self.setWindowTitle('QT Conference Chronometer')
         # Load saved chronos
         self.chronos_fn = 'chronos.json'
         with open(self.chronos_fn) as json_data:
