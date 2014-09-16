@@ -23,6 +23,10 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         self.ventana.SaveBtn.clicked.connect(self.SaveChrono)
         self.ventana.SavedList.itemDoubleClicked.connect(self.LaunchChrono)
 
+        #QtGui.QShortcut(QtGui.QKeySequence("F"), self.ventana.SavedList, self.LaunchChrono)
+        QtGui.QShortcut(QtGui.QKeySequence(QtCore.Qt.Key_Delete), self.ventana.SavedList, self.DelChrono)
+
+
     # Implementados
     def SaveChrono(self):
         green_time = self.ventana.GreenEdit.text()
@@ -57,3 +61,11 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
             QtGui.QMessageBox.about(self, 'Error','Choose an item')
         if ok:
             os.system("./chronometer.py "+str(g)+' '+str(y)+' '+str(r))
+
+    def DelChrono(self):
+        '''
+        Se invoca al presionar DEL sobre un item y
+        elimina item seleccionado
+        '''
+        self.ventana.SavedList.takeItem(self.ventana.SavedList.currentRow())
+
