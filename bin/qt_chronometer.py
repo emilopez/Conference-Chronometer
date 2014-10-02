@@ -11,8 +11,10 @@ __email__ = "emiliano dot lopez at gmail dot com"
 __url__ = "https://github.com/emilopez/Conference-Chronometer"
 __date__ = "2014-09-16"
 
-from ui import qt_chrono_class
 import sys
+sys.path.append("../")
+
+from ConferenceChronometer.ui import qt_chrono_class
 
 def main():
     app = qt_chrono_class.nico.QtGui.QApplication(sys.argv)
