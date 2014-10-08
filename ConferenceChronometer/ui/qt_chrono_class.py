@@ -64,13 +64,15 @@ class chrono(QtGui.QMainWindow, nico.Ui_MainWindow):
         except Exception:
             QtGui.QMessageBox.about(self, 'Error','Choose an item')
         if ok:
-            os.system("./chronometer.py "+str(g)+' '+str(y)+' '+str(r))
+            os.system("./"+os.path.dirname(__file__) + '/../chronometer.py '+str(g)+' '+str(y)+' '+str(r))
 
     def DelChrono(self):
-        '''
+        """
+        Elimina item seleccionado
+
         Se invoca al presionar DEL sobre un item y
         elimina item seleccionado
-        '''
+        """
         chron_label, color_times = self.ventana.SavedList.currentItem().text().split(':')
         del self.chronos[str(chron_label)]
         self.ventana.SavedList.takeItem(self.ventana.SavedList.currentRow())
